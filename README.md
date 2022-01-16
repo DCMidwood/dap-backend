@@ -84,6 +84,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
+Using pipenv to handle the virtual environment
+Using django to create a web application
+Intention is to develop the following
+  Interface for pulling out a stored procedure from Postgres
+  Python model for calculating cut and fill from a geojson file 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
