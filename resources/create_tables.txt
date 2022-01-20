@@ -1,0 +1,67 @@
+drop table civ.tracks;
+CREATE TABLE civ.tracks (
+	uid serial4 NOT NULL,
+	workpack varchar(50),
+	track_id varchar(20) NULL,
+	track_type varchar(50) NULL,
+	geom geometry(linestring, 32630) NULL,
+	CONSTRAINT tracks_pkey PRIMARY KEY (uid)
+);
+
+
+drop table civ.mto_trackmaterials;
+CREATE TABLE civ.mto_trackMaterials (
+                Track_Type VARCHAR(50) NOT NULL,
+                Pavement_Width REAL NOT NULL, 
+                Pavement_Depth REAL NOT NULL,  
+                Gravel_Per_Metre REAL NOT NULL,  
+                Riprap_Depth REAL NOT NULL  
+                );
+                
+drop table civ.mto_padmaterials;   
+CREATE TABLE civ.mto_padMaterials (
+                wellpad_type VARCHAR(50),
+                Cutting_Sump_Cut_m3 REAL,
+                Gravel_Volume_m3 REAL
+                );
+
+INSERT INTO civ.mto_trackMaterials (Track_Type, Pavement_Width, 
+                                                     Pavement_Depth, Gravel_Per_Metre,
+                                                     Riprap_Depth )
+Values
+        ('A = Sealed Access Road',	0,	0,	0,	0),
+        ('B = Unsealed Access Road',	9.5,	0.275,	2.61,	0),
+        ('C = Unsealed Minor Access Road',	6,	0.15,	0.9,	0),
+        ('D1 = Access track - Formed',	0,	0,	0,	0),
+        ('D2 = Access track - Gravel',	5,	0.15,	0.75,	0),
+        ('D3 = Access track - Single Crossfall',	5,	0.15,	0.75,	0),
+        ('E1 = Minor Access Track - Formed',	0,	0,	0,	0),
+        ('E2 = Minor Access Track - Gravel',	4,	0.15,	0.6,	0),
+        ('F = Minor Access Track - Minimal Disturbance',	0,	0,	0,	0),
+        ('O = Overland Flow Path - Riprap',	0,	0,	0,	0.3);    
+        
+       
+INSERT INTO civ.mto_padMaterials (
+                wellpad_type,
+                Cutting_Sump_Cut_m3,
+                Gravel_Volume_m3
+                )
+Values 
+        (1,	56,	93.6),
+        (2,	83.6,	333),
+        (3,	102,	423),
+        (4,	129.6,	529.2),
+        (5,	148,	642.6),
+        (6,	175.6,	756),
+        (7,	194,	846),
+        (8,	221.6,	936);
+        
+        
+drop view civ.vmto_tracks_totalmaterials    ;
+create view civ.vmto_tracks_totalmaterials as
+select tracks.uid as uid, tracks.track_id, material.track_type as track_type,
+material.pavement_width, material.pavement_depth , material.gravel_per_metre, material.riprap_depth,
+st_length(tracks.geom), st_length(tracks.geom) * material.gravel_per_metre as total_gravel, st_length(tracks.geom) * material.riprap_depth as total_riprap,
+tracks.geom 
+from civ.tracks tracks 
+inner join civ.mto_trackmaterials material on tracks.track_type = material.track_type ;
