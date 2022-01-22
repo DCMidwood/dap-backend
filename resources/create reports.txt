@@ -1,7 +1,0 @@
-create schema reports;
-
-create table reports.reports(
-uid serial4 NOT NULL,
-report_name varchar(50),
-report_function varchar(50)
-)
