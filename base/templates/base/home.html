@@ -1,0 +1,18 @@
+{% extends 'main.html' %} 
+{% block title %} Home {% endblock %} 
+
+{% block content%}
+<h1>Welcome home :)</h1>
+<div>
+  <h3>Reports Available</h3>
+  <div>
+    {% for report in reports %}
+    <div>
+      <h5>
+        {{report.id}} -- <a href="{% url 'report' report.id %}"> {{report.report_name}}</a>
+      </h5>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
