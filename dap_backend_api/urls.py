@@ -19,5 +19,6 @@ from dap_backend_api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('turbines/', views.turbine_list )
+    path('turbines/', views.turbine_list ),
+    path('reports/', views.report_list )
 ]
