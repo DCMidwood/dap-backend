@@ -67,6 +67,9 @@ Using django to create a a series of api
 Intention is to develop the following
 Python model for calculating cut and fill from a geojson file
 
+using this for structure
+https://www.rootstrap.com/blog/django-best-practices-and-beginner-tips/
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With

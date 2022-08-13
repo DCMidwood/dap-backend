@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from dap_backend_api import views
+from api.views import download_zip
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('turbines/', views.turbine_list ),
-    path('reports/', views.report_list )
+    path('reports/', views.report_list ),
+    path('api/' , download_zip)
 ]

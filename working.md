@@ -34,3 +34,5 @@ INSTALLED_APPS = [
 'rest_framework'
 'drinks',
 'django.contrib
+
+python manage.py startapp api
