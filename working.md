@@ -1,16 +1,15 @@
-Ensure virtualenv is installed 
-   ```bash
-    pip install virtualenv
-   ```
-   ```bash
-   pip freeze > requirements.txt
-   ```
+Requirements
 
-3. Create virtual environment pipenv
+```bash
+pip freeze > requirements.txt
+```
+
+3. Create virtual environment virtualenv specifying the Python version (3.10.4)
    ```bash
-   python -m virtualenv venv
+   python -m virtualenv -p python3.10.4 venv
    ```
-4. Activate the virtual environment 
+4. Activate the virtual environment
+
    ```bash
     venv\Scripts\activate
    ```
@@ -19,7 +18,6 @@ Ensure virtualenv is installed
    ```bash
     pip install -r requirements.txt
    ```
-5. pip install django
 
 django-admin startproject dap_backend_api .
 python manage.py runserver
@@ -33,6 +31,6 @@ python manage.py makemigrations drinks
 python manage.py migrate
 
 INSTALLED_APPS = [
-    'rest_framework'
-    'drinks',
-    'django.contrib
+'rest_framework'
+'drinks',
+'django.contrib

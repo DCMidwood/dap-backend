@@ -7,8 +7,6 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -16,10 +14,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">dap backend api</h3>
 
   <p align="center">
-    project_description
+    APIs for the DAP project.
     <br />
     <a href="https://github.com/DCMidwood/dap-backend"><strong>Explore the docs »</strong></a>
     <br />
@@ -31,8 +29,6 @@
     <a href="https://github.com/DCMidwood/dap-backend/issues">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -60,43 +56,39 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Using pipenv to handle the virtual environment
-Using django to create a web application
+Using virtualenv to handle the virtual environment
+Using django to create a a series of api
 Intention is to develop the following
-  Interface for pulling out a stored procedure from Postgres
-  Python model for calculating cut and fill from a geojson file 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+Python model for calculating cut and fill from a geojson file
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
-* [Django](https://www.djangoproject.com/)
+- [Python 3.10.4](https://www.python.org/downloads/release/python-3104/)
+- [Django](https://www.djangoproject.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ### Getting Started
-
-
 
 ## Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* pipenv
+- Python 3.10.4
+  The application uses Python 3.10.4. If using virtualenv to create your virtual environment ensure this version is installed on your machine. Download available here:
+  https://www.python.org/downloads/release/python-3104/
+
+- virtualenv
   ```bash
-  pip install pipenv
+  pip install virtualenv
   ```
 
 ## Installation
@@ -105,24 +97,36 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/DCMidwood/dap-backend.git
    ```
-2.cd to the project file dap-backend
+   2.cd to the project file dap-backend
    ```bash
    cd dap-backend
    ```
-3. Activate pipenv
+2. Create virtual environment virtualenv specifying the Python version (3.10.4)
    ```bash
-   pipenv shell
+   python -m virtualenv -p python3.10.4 venv
    ```
-4. pipenv install based on your Pipfile
+3. Activate the virtual environment
+
    ```bash
-   pipenv install --ignore-pipfile
+    venv\Scripts\activate
    ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+4. Install required modules
 
+   ```bash
+    pip install -r requirements.txt
+   ```
 
+5. Start the server
+
+   ```bash
+   python manage.py runserver
+   ```
+
+   <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
@@ -131,21 +135,17 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
-Backlog trello:
+Backlog (trello):<br/>
 https://trello.com/b/dGjwG96u/dap-backend
-
-See the [open issues](https://github.com/DCMidwood/dap-backend/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -161,18 +161,16 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Your Name - [@DCMidwood](https://twitter.com/DCMidwood) - daniel.c-m@outlook.com
@@ -181,30 +179,28 @@ Project Link: [https://github.com/DCMidwood/dap-backend](https://github.com/DCMi
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+- []()
+- []()
+- []()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+
+[contributors-shield]: https://img.shields.io/github/contributors/DCMidwood/dap-backend.svg?style=for-the-badge
 [contributors-url]: https://github.com/DCMidwood/dap-backend/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/DCMidwood/dap-backend.svg?style=for-the-badge
 [forks-url]: https://github.com/DCMidwood/dap-backend/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/DCMidwood/dap-backend.svg?style=for-the-badge
 [stars-url]: https://github.com/DCMidwood/dap-backend/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/DCMidwood/dap-backend.svg?style=for-the-badge
 [issues-url]: https://github.com/DCMidwood/dap-backend/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/DCMidwood/dap-backend.svg?style=for-the-badge
 [license-url]: https://github.com/DCMidwood/dap-backend/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/danielcm1/
